@@ -9,6 +9,12 @@ export const GlobalStyles = createGlobalStyle`
 
 body{
   -webkit-font-smoothing:antialiased;
+  background: ${(props) => props.theme.colors['base-background']};
+  color:${(props) => props.theme.colors['base-text']};
+}
 
+body, button, input {
+  font-family: 'Nunito';
+  font-weight: 400;
 }
 `
