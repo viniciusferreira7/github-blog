@@ -5,3 +5,17 @@ export const LayoutContainer = styled.div`
   width: 100%;
   margin: 0 auto;
 `
+export const DefaultBox = styled.div`
+  max-width: 54rem;
+  width: 100%;
+  padding: 2rem;
+
+  background: ${(props) => props.theme.colors['base-profile']};
+  background: #0b1b2b;
+  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  margin: 0 auto;
+  margin-top: -5.5rem;
+  z-index: 3;
+`

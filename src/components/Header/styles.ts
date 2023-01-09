@@ -18,6 +18,7 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
     width: 25.56rem;
     height: 11.75rem;
     background-size: contain;
+    z-index: 1;
   }
 
   div:first-of-type {
@@ -31,6 +32,8 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   img {
     width: 9.25rem;
     height: 6.125rem;
+    position: relative;
+    top: -35px;
   }
 
   @media screen and (max-width: 768px) {
