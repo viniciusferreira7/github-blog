@@ -14,7 +14,7 @@ body{
 }
 
 body, button, input {
-  font-family: 'Nunito';
+  font-family: 'Nunito', sans-serif;
   font-weight: 400;
 }
 `
