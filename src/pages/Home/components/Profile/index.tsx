@@ -11,7 +11,7 @@ import {
   ProfileMain,
 } from './styles'
 
-import avatar from '../../assets/avatar.svg'
+import avatar from '../../../../assets/avatar.svg'
 
 export function Profile() {
   return (
@@ -25,7 +25,9 @@ export function Profile() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>github</span> <RiShareBoxFill />
+            <span>
+              github <RiShareBoxFill />
+            </span>
           </a>
         </ProfileHeader>
         <ProfileMain>

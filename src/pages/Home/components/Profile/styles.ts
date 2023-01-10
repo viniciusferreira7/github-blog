@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { DefaultBox } from '../../layouts/DefaultLayout/styles'
+import { DefaultBox } from '../../../../layouts/DefaultLayout/styles'
 
 export const ProfileContainer = styled(DefaultBox)`
   display: flex;
@@ -32,7 +32,6 @@ export const ProfileHeader = styled.header`
 
   a {
     display: flex;
-    gap: 0.5rem;
     align-items: center;
 
     text-decoration: none;
@@ -40,6 +39,17 @@ export const ProfileHeader = styled.header`
     font-size: ${(props) => props.theme.fontSizes.xs};
     font-weight: 700;
     color: ${(props) => props.theme.colors['blue-300']};
+
+    span {
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover {
+      span {
+        transition: all 0.3s ease-in-out;
+        border-bottom: 1px solid ${(props) => props.theme.colors['blue-300']};
+      }
+    }
   }
 
   @media screen and (max-width: 768px) {
