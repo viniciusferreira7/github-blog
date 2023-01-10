@@ -1,3 +1,4 @@
+import { CollectionOfPosts } from './components/CollectionOfPosts'
 import { Profile } from './components/Profile'
 import { SearchPublications } from './components/SearchPublications'
 import { HomeContainer } from './styles'
@@ -7,7 +8,7 @@ export function Home() {
     <HomeContainer>
       <Profile />
       <SearchPublications />
-      Home
+      <CollectionOfPosts />
     </HomeContainer>
   )
 }

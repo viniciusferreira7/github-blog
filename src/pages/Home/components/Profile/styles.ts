@@ -15,7 +15,7 @@ export const ProfileContainer = styled(DefaultBox)`
     }
   }
 `
-export const Content = styled.div`
+export const ProfileContent = styled.div`
   width: 100%;
 `
 

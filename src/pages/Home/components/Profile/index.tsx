@@ -4,7 +4,7 @@ import { HiUsers } from 'react-icons/hi'
 import { RiShareBoxFill } from 'react-icons/ri'
 
 import {
-  Content,
+  ProfileContent,
   ProfileContainer,
   ProfileFooter,
   ProfileHeader,
@@ -17,7 +17,7 @@ export function Profile() {
   return (
     <ProfileContainer>
       <img src={avatar} alt="Foto de usuário" />
-      <Content>
+      <ProfileContent>
         <ProfileHeader>
           <h1>Cameron Williamson</h1>
           <a
@@ -48,7 +48,7 @@ export function Profile() {
             <HiUsers /> <span>32 seguidores</span>
           </div>
         </ProfileFooter>
-      </Content>
+      </ProfileContent>
     </ProfileContainer>
   )
 }

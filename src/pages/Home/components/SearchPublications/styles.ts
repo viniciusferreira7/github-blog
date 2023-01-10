@@ -8,9 +8,7 @@ export const SearchPublicationsContainer = styled.form`
   justify-content: space-between;
   gap: 0.75rem;
 
-  max-width: 54rem;
   width: 100%;
-  margin: auto;
   margin-top: 4.5rem;
 
   h2 {
@@ -52,9 +50,5 @@ export const SearchPublicationsContainer = styled.form`
         color: ${(props) => props.theme.colors['base-text']};
       }
     }
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 2%;
   }
 `
