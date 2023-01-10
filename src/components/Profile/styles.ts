@@ -6,6 +6,9 @@ export const ProfileContainer = styled(DefaultBox)`
   gap: 2rem;
 
   @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
     img {
       width: 100px;
       height: 100%;
@@ -15,7 +18,6 @@ export const ProfileContainer = styled(DefaultBox)`
 export const Content = styled.div`
   width: 100%;
 `
-// Retângulos estão em cima da box
 
 export const ProfileHeader = styled.header`
   display: flex;
@@ -36,12 +38,17 @@ export const ProfileHeader = styled.header`
     text-decoration: none;
     text-transform: uppercase;
     font-size: ${(props) => props.theme.fontSizes.xs};
+    font-weight: 700;
     color: ${(props) => props.theme.colors['blue-300']};
   }
 
   @media screen and (max-width: 768px) {
     h1 {
-      font-size: ${(props) => props.theme.fontSizes.md};
+      font-size: ${(props) => props.theme.fontSizes.sm};
+    }
+
+    a {
+      font-size: ${(props) => props.theme.fontSizes.xs};
     }
   }
 `
@@ -51,6 +58,10 @@ export const ProfileMain = styled.main`
   font-size: ${(props) => props.theme.fontSizes.md};
   color: ${(props) => props.theme.colors['base-text']};
   line-height: 25.6px;
+
+  @media screen and (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontSizes.xs};
+  }
 `
 
 export const ProfileFooter = styled.footer`
@@ -66,6 +77,12 @@ export const ProfileFooter = styled.footer`
 
     svg {
       color: ${(props) => props.theme.colors['base-label']};
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    div {
+      font-size: ${(props) => props.theme.fontSizes.xs};
     }
   }
 `

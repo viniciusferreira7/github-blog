@@ -32,8 +32,7 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   img {
     width: 9.25rem;
     height: 6.125rem;
-    position: relative;
-    top: -35px;
+    margin-top: -70px;
   }
 
   @media screen and (max-width: 768px) {
@@ -46,6 +45,7 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
     img {
       width: 8.5rem;
       height: 5.8rem;
+      margin-top: -20px;
     }
   }
 `
