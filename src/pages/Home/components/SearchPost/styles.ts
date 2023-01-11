@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const SearchPublicationsContainer = styled.form`
+export const SearchPostsContainer = styled.form`
   display: grid;
   grid-template-areas:
     'h2 span'
