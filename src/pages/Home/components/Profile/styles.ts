@@ -83,10 +83,13 @@ export const ProfileFooter = styled.footer`
     align-items: center;
     gap: 0.5rem;
 
-    font-size: ${(props) => props.theme.fontSizes.md};
-
     svg {
       color: ${(props) => props.theme.colors['base-label']};
+      font-size: ${(props) => props.theme.fontSizes.lg};
+    }
+
+    span {
+      font-size: ${(props) => props.theme.fontSizes.md};
     }
   }
 

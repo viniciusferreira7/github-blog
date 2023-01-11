@@ -1,5 +1,11 @@
+import { PublicationHeader } from './components/PublicationHeader'
 import { PublicationContainer } from './styles'
 
 export function Publication() {
-  return <PublicationContainer>Publication</PublicationContainer>
+  return (
+    <PublicationContainer>
+      <PublicationHeader />
+      Publication
+    </PublicationContainer>
+  )
 }
