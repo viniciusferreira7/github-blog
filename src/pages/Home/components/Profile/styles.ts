@@ -70,7 +70,7 @@ export const ProfileMain = styled.main`
   line-height: 25.6px;
 
   @media screen and (max-width: 768px) {
-    font-size: ${(props) => props.theme.fontSizes.xs};
+    font-size: ${(props) => props.theme.fontSizes.sm};
   }
 `
 
@@ -94,6 +94,9 @@ export const ProfileFooter = styled.footer`
   }
 
   @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.35rem;
+
     div {
       font-size: ${(props) => props.theme.fontSizes.xs};
     }
