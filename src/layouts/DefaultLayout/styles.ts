@@ -22,7 +22,7 @@ export const DefaultBox = styled.div`
 
   @media screen and (max-width: 768px) {
     max-width: 22rem;
-    margin-top: 0;
+    margin-top: -20px;
 
     position: relative;
 

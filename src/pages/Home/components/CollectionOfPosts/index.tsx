@@ -3,6 +3,7 @@ import { CollectionOfPostsContainer } from './styles'
 
 export function CollectionOfPosts() {
   return (
+    // Deixar os collection responsivo
     <CollectionOfPostsContainer>
       <Post />
       <Post />

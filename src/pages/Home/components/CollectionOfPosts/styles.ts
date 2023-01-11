@@ -6,4 +6,8 @@ export const CollectionOfPostsContainer = styled.section`
   gap: 2rem;
 
   margin-top: 3rem;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `
