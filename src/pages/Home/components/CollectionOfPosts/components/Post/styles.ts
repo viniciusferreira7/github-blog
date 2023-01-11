@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const PostContainer = styled.article`
+export const PostContainer = styled(Link)`
   display: flex;
   flex-direction: column;
 
@@ -11,6 +12,7 @@ export const PostContainer = styled.article`
   border-radius: 10px;
   border: 2px solid transparent;
   background: ${(props) => props.theme.colors['base-post']};
+  text-decoration: none !important;
 
   cursor: pointer;
 
@@ -43,4 +45,8 @@ export const PostHeader = styled.header`
 export const PostContent = styled.main`
   height: 7rem;
   overflow: hidden;
+
+  p {
+    color: ${(props) => props.theme.colors['base-text']};
+  }
 `
