@@ -5,6 +5,13 @@ export const ProfileContainer = styled(DefaultBox)`
   display: flex;
   gap: 2rem;
 
+  img {
+    max-width: 148px;
+    width: 100%;
+    height: 148px;
+    border-radius: 8px;
+  }
+
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
