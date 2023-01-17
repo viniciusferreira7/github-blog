@@ -14,11 +14,11 @@ export const ProfileContainer = styled(DefaultBox)`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    align-items: center;
 
     img {
       width: 100px;
       height: 100%;
+      margin: 0 auto;
     }
   }
 `

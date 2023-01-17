@@ -40,6 +40,12 @@ export const PostHeader = styled.header`
     font-size: ${(props) => props.theme.fontSizes.sm};
     color: ${(props) => props.theme.colors['base-span']};
   }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      max-width: 13rem;
+    }
+  }
 `
 
 export const PostContent = styled.main`

@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react'
 import { Loading } from './components/Loading'
 
 interface User {
+  name: string
   login: string
   avatar_url: string
   url: string
@@ -49,7 +50,7 @@ export function Profile() {
           <img src={user?.avatar_url} alt="Foto de usuário" />
           <ProfileContent>
             <ProfileHeader>
-              <h1>Cameron Williamson</h1>
+              <h1>{user?.name}</h1>
               <a href={user?.url} target="_blank" rel="noopener noreferrer">
                 <span>
                   github <RiShareBoxFill />
