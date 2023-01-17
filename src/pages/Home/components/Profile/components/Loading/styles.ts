@@ -31,6 +31,7 @@ export const LoadingContainer = styled(DefaultBox)`
     max-width: 67px;
     width: 100%;
     height: 19px;
+    margin-left: auto;
   }
 
   p {
@@ -56,6 +57,25 @@ export const LoadingContainer = styled(DefaultBox)`
 
     &:last-of-type {
       grid-area: div3;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-areas:
+      'section section'
+      'h1 h6'
+      'p p'
+      'div1 div1'
+      'div2 div2'
+      'div3 div3';
+    align-items: center;
+
+    section {
+      margin: 0 auto;
+    }
+
+    h6 {
+      margin-left: auto;
     }
   }
 `

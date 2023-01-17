@@ -10,7 +10,6 @@ import {
   ProfileMain,
 } from './styles'
 
-import avatar from '../../../../assets/avatar.svg'
 import { apiUser } from '../../../../lib/axios'
 import { useEffect, useState } from 'react'
 import { Loading } from './components/Loading'
@@ -33,17 +32,19 @@ export function Profile() {
 
     const response = await apiUser.get('')
 
+    setLoading(false)
     setUser(response.data)
   }
 
   useEffect(() => {
     fetchUser()
-    setLoading(false)
   }, [])
 
   return (
     <>
-      {!loading ? (
+      {loading ? (
+        <Loading />
+      ) : (
         <ProfileContainer>
           <img src={user?.avatar_url} alt="Foto de usuário" />
           <ProfileContent>
@@ -67,13 +68,11 @@ export function Profile() {
                 <span>{user?.public_repos} Repositórios</span>
               </div>
               <div>
-                <HiUsers /> <span>{user?.followers}</span>
+                <HiUsers /> <span>{user?.followers} Seguidores</span>
               </div>
             </ProfileFooter>
           </ProfileContent>
         </ProfileContainer>
-      ) : (
-        <Loading />
       )}
     </>
   )
