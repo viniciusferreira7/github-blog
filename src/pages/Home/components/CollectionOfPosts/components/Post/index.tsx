@@ -1,3 +1,5 @@
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 import { PostContainer, PostContent, PostHeader } from './styles'
 interface PostProps {
   title: string
@@ -10,7 +12,11 @@ export function Post({ title, body, created_at: created }: PostProps) {
     <PostContainer to="/publication" title="Clique para mais informações">
       <PostHeader>
         <h1>{title}</h1>
-        <span>{created}</span>
+        <span>
+          {formatDistanceToNow(new Date(created), {
+            locale: ptBR,
+          })}
+        </span>
       </PostHeader>
       <PostContent>
         <p>{body}</p>
