@@ -10,6 +10,7 @@ interface PostsType {
 
 interface PostsContextType {
   posts: PostsType[] | undefined
+  loading: boolean
 }
 
 export const PostContext = createContext({} as PostsContextType)
@@ -20,13 +21,18 @@ interface PostProviderProps {
 
 export function PostProvider({ children }: PostProviderProps) {
   const [posts, setPosts] = useState<PostsType[]>()
+  const [loading, setLoading] = useState(false)
 
   async function fetchSearch() {
+    setLoading(true)
+
     const response = await apiSearch.get('', {
       params: {
         q: 'repo:viniciusferreira7/github-blog',
       },
     })
+
+    setLoading(false)
 
     setPosts(response.data.items)
   }
@@ -36,6 +42,8 @@ export function PostProvider({ children }: PostProviderProps) {
   }, [])
 
   return (
-    <PostContext.Provider value={{ posts }}>{children}</PostContext.Provider>
+    <PostContext.Provider value={{ posts, loading }}>
+      {children}
+    </PostContext.Provider>
   )
 }
