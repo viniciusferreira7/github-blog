@@ -10,4 +10,8 @@ export const apiSearch = axios.create({
 
 export const apiIssue = axios.create({
   baseURL: 'https://api.github.com/repos/viniciusferreira7/github-blog/issues',
+  auth: {
+    username: 'viniciusferreira7',
+    password: String(process.env.GITHUB_TOKEN),
+  },
 })
