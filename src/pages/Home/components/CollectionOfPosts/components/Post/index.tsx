@@ -5,11 +5,15 @@ interface PostProps {
   title: string
   body: string
   created_at: string
+  number: number
 }
 
-export function Post({ title, body, created_at: created }: PostProps) {
+export function Post({ title, body, created_at: created, number }: PostProps) {
   return (
-    <PostContainer to="/publication" title="Clique para mais informações">
+    <PostContainer
+      to={`/publication/${number}`}
+      title="Clique para mais informações"
+    >
       <PostHeader>
         <h1>{title}</h1>
         <span>

@@ -6,31 +6,55 @@ import { RiShareBoxFill } from 'react-icons/ri'
 import { PublicationHeaderContainer } from './styles'
 import { AiFillGithub } from 'react-icons/ai'
 import { FaCalendarDay, FaComment } from 'react-icons/fa'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
-export function PublicationHeader() {
+interface PublicationHeaderProps {
+  url: string
+  title: string
+  user: {
+    login: string
+  }
+  body: string
+  comments: number
+  created_at: string
+}
+
+export function PublicationHeader({
+  url,
+  title,
+  user: { login },
+  body,
+  comments,
+  created_at: created,
+}: PublicationHeaderProps) {
   return (
     <PublicationHeaderContainer>
       <header>
         <Link to="/">
           <IoIosArrowBack /> voltar
         </Link>
-        <a href="https://github.com/viniciusferreira7">
+        <a href={url}>
           ver no github <RiShareBoxFill />
         </a>
       </header>
-      <h1>JavaScript data types and data structures</h1>
+      <h1>{title}</h1>
       <footer>
         <div>
           <AiFillGithub />
-          <span>cameronwll</span>
+          <span>{login}</span>
         </div>
         <div>
           <FaCalendarDay />
-          <span>Há 1 dia</span>
+          <span>
+            {formatDistanceToNow(new Date(created), {
+              locale: ptBR,
+            })}
+          </span>
         </div>
         <div>
           <FaComment />
-          <span>5 comentários</span>
+          <span>{comments} comentários</span>
         </div>
       </footer>
     </PublicationHeaderContainer>
