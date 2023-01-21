@@ -40,7 +40,6 @@ export function Publication() {
     const response = await apiIssue('')
 
     setLoading(false)
-    console.log(postId)
     setPublicationInfo(response.data[postId])
   }
 
@@ -57,7 +56,7 @@ export function Publication() {
       ) : (
         <>
           <PublicationHeader {...publicationInfo} />
-          <PublicationContent />
+          <PublicationContent {...publicationInfo} />
         </>
       )}
     </PublicationContainer>
