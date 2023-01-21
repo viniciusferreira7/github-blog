@@ -15,7 +15,6 @@ interface PublicationHeaderProps {
   user: {
     login: string
   }
-  body: string
   comments: number
   created_at: string
 }
@@ -24,7 +23,6 @@ export function PublicationHeader({
   url,
   title,
   user: { login },
-  body,
   comments,
   created_at: created,
 }: PublicationHeaderProps) {

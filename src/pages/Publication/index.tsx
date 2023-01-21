@@ -17,8 +17,19 @@ interface PublicationProps {
   created_at: string
 }
 
+const mock = {
+  url: '',
+  title: '',
+  user: {
+    login: '',
+  },
+  body: '',
+  comments: 0,
+  created_at: '2023-01-14T15:52:47Z',
+}
+
 export function Publication() {
-  const [publicationInfo, setPublicationInfo] = useState<PublicationProps>()
+  const [publicationInfo, setPublicationInfo] = useState<PublicationProps>(mock)
   const [loading, setLoading] = useState(false)
 
   const { postId } = useParams()
@@ -28,8 +39,9 @@ export function Publication() {
 
     const response = await apiIssue('')
 
-    setPublicationInfo(response.data[postId])
     setLoading(false)
+    console.log(postId)
+    setPublicationInfo(response.data[postId])
   }
 
   useEffect(() => {
@@ -40,7 +52,9 @@ export function Publication() {
 
   return (
     <PublicationContainer>
-      {loading ? null : (
+      {loading ? (
+        <p>Carregando...</p>
+      ) : (
         <>
           <PublicationHeader {...publicationInfo} />
           <PublicationContent />
