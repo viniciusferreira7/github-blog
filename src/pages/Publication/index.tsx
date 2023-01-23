@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { apiIssue } from '../../lib/axios'
+import { LoadingPublication } from './components/LoadingPublication'
 import { PublicationContent } from './components/PublicationContent'
 import { PublicationHeader } from './components/PublicationHeader'
 
 import { PublicationContainer } from './styles'
 
-interface PublicationProps {
+interface PublicationType {
   url: string
   title: string
   user: {
@@ -15,6 +16,7 @@ interface PublicationProps {
   body: string
   comments: number
   created_at: string
+  number: number
 }
 
 const mock = {
@@ -26,10 +28,11 @@ const mock = {
   body: '',
   comments: 0,
   created_at: '2023-01-14T15:52:47Z',
+  number: 1,
 }
 
 export function Publication() {
-  const [publicationInfo, setPublicationInfo] = useState<PublicationProps>(mock)
+  const [publicationInfo, setPublicationInfo] = useState<PublicationType>(mock)
   const [loading, setLoading] = useState(false)
 
   const { postId } = useParams()
@@ -37,10 +40,18 @@ export function Publication() {
   async function fetchIssue(postId: string) {
     setLoading(true)
 
-    const response = await apiIssue('')
+    try {
+      const response = await apiIssue('')
 
-    setLoading(false)
-    setPublicationInfo(response.data[postId])
+      const post: PublicationType = response.data.find(
+        (post: PublicationType) => post.number === Number(postId),
+      )
+
+      setLoading(false)
+      setPublicationInfo(post)
+    } catch {
+      setLoading(true)
+    }
   }
 
   useEffect(() => {
@@ -52,7 +63,7 @@ export function Publication() {
   return (
     <PublicationContainer>
       {loading ? (
-        <p>Carregando...</p>
+        <LoadingPublication />
       ) : (
         <>
           <PublicationHeader {...publicationInfo} />
