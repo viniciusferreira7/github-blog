@@ -12,6 +12,7 @@ interface PostsType {
 interface PostsContextType {
   posts: PostsType[] | undefined
   loading: boolean
+  filterPosts: (inputValue: string) => void
 }
 
 export const PostContext = createContext({} as PostsContextType)
@@ -38,12 +39,26 @@ export function PostProvider({ children }: PostProviderProps) {
     setPosts(response.data.items)
   }
 
+  function filterPosts(inputValue: string) {
+    if (inputValue) {
+      setPosts((state) =>
+        state?.filter(
+          (post) =>
+            post.title.match(new RegExp(inputValue, 'gi')) ||
+            post.body.match(new RegExp(inputValue, 'gi')),
+        ),
+      )
+    } else if (!inputValue) {
+      fetchSearch()
+    }
+  }
+
   useEffect(() => {
     fetchSearch()
   }, [])
 
   return (
-    <PostContext.Provider value={{ posts, loading }}>
+    <PostContext.Provider value={{ posts, loading, filterPosts }}>
       {children}
     </PostContext.Provider>
   )
