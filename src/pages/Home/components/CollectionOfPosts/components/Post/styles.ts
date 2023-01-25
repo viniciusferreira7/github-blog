@@ -25,6 +25,7 @@ export const PostContainer = styled(Link)`
 export const PostHeader = styled.header`
   display: flex;
   gap: 1rem;
+  justify-content: space-between;
   align-items: flex-start;
 
   margin-bottom: 1.25rem;
